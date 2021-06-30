@@ -1,0 +1,9 @@
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\bin\Debug\netcoreapp3.1\ModelFactory.deps.json
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\bin\Debug\netcoreapp3.1\ModelFactory.dll
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\bin\Debug\netcoreapp3.1\ModelFactory.pdb
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\obj\Debug\netcoreapp3.1\ModelFactory.csproj.AssemblyReference.cache
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\obj\Debug\netcoreapp3.1\ModelFactory.AssemblyInfoInputs.cache
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\obj\Debug\netcoreapp3.1\ModelFactory.AssemblyInfo.cs
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\obj\Debug\netcoreapp3.1\ModelFactory.csproj.CoreCompileInputs.cache
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\obj\Debug\netcoreapp3.1\ModelFactory.dll
+C:\Users\aliss\source\repos\TesteNovaVida\ModelFactory\obj\Debug\netcoreapp3.1\ModelFactory.pdb

@@ -1,0 +1,102 @@
+﻿@model List<ModelFactory.Aluno>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-m12 p-3 overflow-hidden">
+        <h5>Lista de Alunos @(ViewBag.Professor != null ? (" - Professor: " + ViewBag.Professor.Nome) : "")</h5>
+        <table id="dtCadastros"></table>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        var table =
+            $("#dtCadastros").DataTable(
+                {
+                    autoWidth: false,
+                    dom: 'Bfrtip',
+                    responsive: true,
+                    buttons: [
+                        {
+                            text: 'Novo',
+                            action: function (e, dt, node, config) {
+                                Novo();
+                            }
+                        }
+                    ],
+                    columns: [
+                        { data: 'Acao', title: '', orderable: false },
+                        { data: "Id", title: "", visible: false },
+                        { data: "IdProfessor", title: "", visible: false },
+                        { data: "NomeAluno", title: "Aluno"  },
+                        { data: "ValorMensalidade", title: "Valor Mensalidade"  },
+                        { data: "DataVencimento", title: "Data Vencimento"  },
+                        { data: "NomeProfessor", title: 'Professor' }
+                    ],                    
+                    language: LanguageDataTables
+                }
+            );
+
+        function AddRowsCadastros(Id, IdProfessor, NomeAluno, ValorMensalidade, DataVencimento, NomeProfessor) {
+            table.row.add(
+                {
+                    Acao: "<a class='tooltipped' data-position='bottom'data-html='true' data-tooltip='Editar'><i class='fas fa-trash' onclick='ExcluirAluno(" + Id + ", this)'></i></a>",
+                    Id: Id,
+                    IdProfessor: IdProfessor,
+                    NomeAluno: NomeAluno,
+                    ValorMensalidade: ValorMensalidade,
+                    DataVencimento: DataVencimento,
+                    NomeProfessor: NomeProfessor,
+                }
+            ).draw(true);
+        }
+
+        function Novo() {
+            var IdProfessor = '@(ViewBag.Professor != null ? ViewBag.Professor.Id : "")'
+            if (IdProfessor > 0) {
+                window.location = "@Url.Action("Cadastrar","Aluno")?idProfessor=" + IdProfessor;
+            } else {
+                window.location = "@Url.Action("Cadastrar", "Aluno")";
+            }
+        }
+
+        var row;
+        function ExcluirAluno(IdAluno, el) {
+            var row = table.row($(el).closest('tr'));
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Excluir", "Aluno")",
+                data: {
+                    idAluno: IdAluno
+                },                
+                success: function (e) {
+                    debugger;
+                    mostraDialogo(e.mensagem, e.sucesso ? "success" : "danger");
+                    if (e.sucesso) {
+                        row.remove().draw();
+                    }
+                },
+                failure: function (response) {
+                    mostraDialogo(responde, 'danger');
+                },
+                error: function () {
+                    mostraDialogo("Houve um erro inesperado", 'danger');
+                }
+            });
+        }
+        @foreach (var item in Model)
+        {
+        <text>
+        AddRowsCadastros('@item.Id'
+            , '@item.Professor.Id'
+            , '@item.Nome'
+            , '@item.ValorMensalidade.ToString("c2")'
+            , '@item.DataVencimento.ToShortDateString()'
+            , '@item.Professor.Nome'
+         );
+        </text>
+        }
+    </script>
+}

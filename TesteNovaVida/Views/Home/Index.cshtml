@@ -1,0 +1,63 @@
+﻿@model List<ModelFactory.Professor>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-m12 p-3">
+        <h5>Lista de Professores</h5>
+        <table id="dtCadastros"></table>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+        var table =
+            $("#dtCadastros").DataTable(
+                {
+                    autoWidth: false,
+                    dom: 'Bfrtip',
+                    responsive: true,
+                    buttons: [
+                        {
+                            text: 'Novo',
+                            action: function (e, dt, node, config) {
+                                Novo();
+                            }
+                        }
+                    ],
+                    columns: [
+                        { data: 'Acao', title: '', orderable: false },
+                        { data: "Id", title: "", visible: false },
+                        { data: "NomeProfessor", title: 'Professor' }
+                    ],
+                    language: LanguageDataTables
+                }
+            );
+
+        function AddRowsCadastros(Id, NomeProfessor) {
+            table.row.add(
+                {
+                    Acao: "<a class='tooltipped' data-position='bottom'data-html='true' data-tooltip='Editar'><i class='fas fa-list' onclick='ListarAlunos(" + Id + ")'></i></a>",
+                    Id: Id,
+                    NomeProfessor: NomeProfessor
+                }
+            ).draw(true);
+        }
+
+        function Novo() {
+            window.location = "@Url.Action("Cadastrar","Professor")"; 
+        }
+
+        function ListarAlunos(IdProfessor) {
+            window.location = "@Url.Action("Index","Aluno")?idProfessor=" + IdProfessor;
+        }
+        @foreach (var item in Model)
+        {
+        <text>
+        AddRowsCadastros('@item.Id', '@item.Nome');
+        </text>
+        }
+    </script>
+}

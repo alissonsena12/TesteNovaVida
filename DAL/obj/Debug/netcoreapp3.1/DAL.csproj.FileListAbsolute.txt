@@ -1,0 +1,12 @@
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\bin\Debug\netcoreapp3.1\DAL.deps.json
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\bin\Debug\netcoreapp3.1\ModelFactory.dll
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\bin\Debug\netcoreapp3.1\ModelFactory.pdb
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.AssemblyReference.cache
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CopyComplete
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.dll
+C:\Users\aliss\source\repos\TesteNovaVida\DAL\obj\Debug\netcoreapp3.1\DAL.pdb

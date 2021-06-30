@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        @if (TempData["MostraErro"] != null)
+        {
+            <text>
+                mostraDialogo("@TempData["MostraErro"]", "danger");
+            </text>
+        }
+
+        @if (TempData["MostraSucesso"] != null)
+        {
+            <text>
+                mostraDialogo("@TempData["MostraSucesso"]", "success");
+            </text>
+        }
+
+        @if (TempData["MostraInfo"] != null)
+        {
+            <text>
+                mostraDialogo("@TempData["MostraInfo"]", "info");
+            </text>
+        }
+    })
+</script>

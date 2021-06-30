@@ -1,0 +1,30 @@
+﻿@model ModelFactory.Professor
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="card">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-m12 p-3">
+        <h5>Cadastrar Professor</h5>
+        <form id="form-cadastro" asp-action="Cadastrar">
+            <div class="row input-group">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-m12">
+                    <label asp-for="Nome" ></label>
+                    <input asp-for="Nome" maxlength="200" class="form-control" required/>
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-m2">
+                    <button type="submit" class="btn btn-primary btn-sm">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+
+    </script>
+}
